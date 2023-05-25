@@ -1,0 +1,207 @@
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git branch header
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git checkout header
+Switched to branch 'header'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git add index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git checkout master
+Switched to branch 'master'
+A       index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git checkout header
+Switched to branch 'header'
+A       index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git commit -m "header TP 3"
+[header faafd53] header TP 3
+ 1 file changed, 4 insertions(+)
+ create mode 100644 index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git checkout master
+Switched to branch 'master'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git branch footer
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git checkout footer
+Switched to branch 'footer'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (footer)
+$ git add index.html
+fatal: pathspec 'index.html' did not match any files
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (footer)
+$ git add index.html
+fatal: pathspec 'index.html' did not match any files
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (footer)
+$ git add index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (footer)
+$ git commit -m "footer TP 3"
+[footer f185851] footer TP 3
+ 1 file changed, 4 insertions(+)
+ create mode 100644 index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (footer)
+$ git checkout header
+Switched to branch 'header'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git checkout master
+Switched to branch 'master'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git merge footer header
+Fast-forwarding to: footer
+Trying simple merge with header
+hint: Waiting for your editor to close the file...       0 [sig] bash 1114! sigpacket::process: Suppressing signal 18 to win32 process (pid 1956)
+Merge made by the 'octopus' strategy.
+ index.html | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 index.html
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git merge main
+merge: main - not something we can merge
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git log
+commit 40c2aba4c36632e05a4969479a428568b955492c (HEAD -> master)
+Merge: f185851 faafd53
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:26:21 2023 +0200
+
+    Merge branches 'footer' and 'header'
+
+commit f185851ec33ab88233a26524e9209d9bfac2f681 (footer)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:23:45 2023 +0200
+
+    footer TP 3
+
+commit faafd53c657159d00fc66831f3ff48734dac36f2 (header)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:19:54 2023 +0200
+
+    header TP 3
+
+commit ffb931d63e4d806b95bbff338a127c27e14d7cdb (feature)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:02:11 2023 +0200
+
+    finished TP 2
+
+commit b88328d4c1cf99d12ab468d729f631c1ad472bf5
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 11:27:46 2023 +0200
+
+    c un test
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (master)
+$ git checkout header
+Switched to branch 'header'
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git merge footer
+Merge made by the 'ort' strategy.
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git merge footer "fusion header footer"
+merge: fusion header footer - not something we can merge
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git log
+commit a68f3ad0772e78c43ec23737f6d7734592c87cb7 (HEAD -> header)
+Merge: faafd53 f185851
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:33:32 2023 +0200
+
+    Merge branch 'footer' into header
+
+commit f185851ec33ab88233a26524e9209d9bfac2f681 (footer)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:23:45 2023 +0200
+
+    footer TP 3
+
+commit faafd53c657159d00fc66831f3ff48734dac36f2
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:19:54 2023 +0200
+
+    header TP 3
+
+commit ffb931d63e4d806b95bbff338a127c27e14d7cdb (feature)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:02:11 2023 +0200
+
+    finished TP 2
+
+commit b88328d4c1cf99d12ab468d729f631c1ad472bf5
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 11:27:46 2023 +0200
+
+    c un test
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git merge master
+Merge made by the 'ort' strategy.
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$ git log
+commit 64a21c475e55cac971a1c9b5291c773b4ed2c3eb (HEAD -> header)
+Merge: a68f3ad 40c2aba
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:35:11 2023 +0200
+
+    Merge branch 'master' into header
+
+commit a68f3ad0772e78c43ec23737f6d7734592c87cb7
+Merge: faafd53 f185851
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:33:32 2023 +0200
+
+    Merge branch 'footer' into header
+
+commit 40c2aba4c36632e05a4969479a428568b955492c (master)
+Merge: f185851 faafd53
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:26:21 2023 +0200
+
+    Merge branches 'footer' and 'header'
+
+commit f185851ec33ab88233a26524e9209d9bfac2f681 (footer)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:23:45 2023 +0200
+
+    footer TP 3
+
+commit faafd53c657159d00fc66831f3ff48734dac36f2
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:19:54 2023 +0200
+
+    header TP 3
+
+commit ffb931d63e4d806b95bbff338a127c27e14d7cdb (feature)
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 12:02:11 2023 +0200
+
+    finished TP 2
+
+commit b88328d4c1cf99d12ab468d729f631c1ad472bf5
+Author: Verdelay49 <domotiq.verdelay@gmail.com>
+Date:   Thu May 25 11:27:46 2023 +0200
+
+    c un test
+
+Administrateur@S02-05-T3420 MINGW64 ~/test (header)
+$
